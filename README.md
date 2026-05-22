@@ -2,14 +2,14 @@
 The system bridges static compliance frameworks with live engineering operations, providing real-time visibility into AI models, datasets, and third-party vendors. It automates telemetry ingestion, schema validation, and evidence logging into an immutable vault, replacing manual processes.
 ---
 
-## 🚀 The Problem Statement
+##  Problem Statement
 In enterprise GRC environments, scaling continuous control monitoring faces two major bottlenecks:
 1. **Schema Chaos:** Security tools, model evaluation frameworks, and cloud scanners dump telemetry in highly variable, deeply nested, or unstructured JSON formats. Traditional rigid code blocks break when schemas shift.
 2. **Monolithic Thresholds:** Different business units have entirely different risk appetites. Forcing a single pass/fail metric across the entire organization means high-risk domains (like HR/Hiring) are evaluated under the same parameters as lower-risk operational domains (like Corporate infrastructure), creating massive compliance gaps.
 
 ---
 
-## 🛠️ The Architecture & Solution
+## The Architecture & Solution
 
 This engine replaces manual spreadsheet reviews with a headless, event-driven data pipeline:
 
@@ -20,7 +20,7 @@ This engine replaces manual spreadsheet reviews with a headless, event-driven da
 
 ---
 
-## 📊 Relational Database Schema Design (Airtable)
+## Relational Database Schema Design (Airtable)
 
 The architecture maps data across a highly structured, relational enterprise compliance ledger:
 * **AI Asset Inventory:** Centralized tracking of enterprise models, risk tiers, and business owners.
@@ -30,5 +30,5 @@ The architecture maps data across a highly structured, relational enterprise com
 
 ---
 
-## 📦 Repository Contents
+##  Repository Contents
 * `workflow.json`: The complete, production-ready n8n blueprint. Import this file straight into your n8n instance to review the node connections.
