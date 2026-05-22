@@ -31,4 +31,5 @@ The architecture maps data across a highly structured, relational enterprise com
 ---
 
 ##  Repository Contents
-* `workflow.json`: The complete, production-ready n8n blueprint. Import this file straight into your n8n instance to review the node connections.
+
+* [📥 Download the Production n8n Workflow File](./Neural_Risk_Management.json): The complete blueprint. You can import this file straight into your n8n instance to review the node connections.: The complete, production-ready n8n blueprint. Import this file straight into your n8n instance to review the node connections.
