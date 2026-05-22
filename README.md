@@ -1,2 +1,320 @@
-# Enterprise-Ai-Governance-System
+# Neural Risk Management 
 The system bridges static compliance frameworks with live engineering operations, providing real-time visibility into AI models, datasets, and third-party vendors. It automates telemetry ingestion, schema validation, and evidence logging into an immutable vault, replacing manual processes.
+[Workflow.json](https://github.com/user-attachments/files/28156741/Neural.Risk.Management.json)
+{
+  "name": "Neural Risk Management",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "d748c7b3-01e9-490e-b387-4359382d42c7",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "4996f2f7-e8eb-4f01-99a1-afa62e6cd3ce",
+      "name": "Webhook",
+      "webhookId": "e2eb2f6a-db0e-492b-b9e5-dcff820ee22c"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appzBBGYdbONi2JkJ",
+          "mode": "list",
+          "cachedResultName": "Enterprise AI Governance System",
+          "cachedResultUrl": "https://airtable.com/appzBBGYdbONi2JkJ"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbPRzCOmqfhsqKS",
+          "mode": "list",
+          "cachedResultName": "API Staging - Scan Ingestion",
+          "cachedResultUrl": "https://airtable.com/appzBBGYdbONi2JkJ/tblbPRzCOmqfhsqKS"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Incoming Asset ID": "={{ $json.output.Incoming_Asset_ID }}",
+            "Incoming NIST Control": "={{ $json.output.Incoming_NIST_Control }}",
+            "Scan Type": "={{ $json.output.Scan_Type }}",
+            "Raw JSON Payload": "={{ $json.output.Raw_JSON_Payload }}",
+            "Business Unit": "={{ $json.output.Business_Unit }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Ingest ID",
+              "displayName": "Ingest ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Incoming Asset ID",
+              "displayName": "Incoming Asset ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Incoming NIST Control",
+              "displayName": "Incoming NIST Control",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Processing Status",
+              "displayName": "Processing Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Pending",
+                  "value": "Pending"
+                },
+                {
+                  "name": "Processed",
+                  "value": "Processed"
+                },
+                {
+                  "name": "Error",
+                  "value": "Error"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Audit Threshold (from Incoming NIST Control)",
+              "displayName": "Audit Threshold (from Incoming NIST Control)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "AI Validation Assessment",
+              "displayName": "AI Validation Assessment",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Scan Type",
+              "displayName": "Scan Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Raw JSON Payload",
+              "displayName": "Raw JSON Payload",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Payload Received Date",
+              "displayName": "Payload Received Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Business Unit",
+              "displayName": "Business Unit",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        0
+      ],
+      "id": "ebd53c9f-eace-4831-b0e3-40fc8edcf095",
+      "name": "Create a record",
+      "alwaysOutputData": false,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "AOtLhuBZLSWkwE2T",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "=={{ JSON.stringify($json.body) }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "Incoming_Asset_ID",
+              "description": "Extract the asset tag or model ID (e.g., \"AI-001\"). Look for 'model_id' or 'asset_tag'. Default to 'UNKNOWN_ASSET' if missing."
+            },
+            {
+              "name": "Incoming_NIST_Control",
+              "description": "Locate the compliance framework control code (e.g., \"MEAS-3.1\"). Look for 'target_control' or 'mapped_nist_control'. Default to 'UNKNOWN_CONTROL' if missing."
+            },
+            {
+              "name": "Business_Unit",
+              "description": "Infer the department based on keywords. If 'registry_uri' or 'model_id' contains 'customer-insights', 'alpha-trader', or 'ledger', output 'Finance'. If it contains 'contract' or 'regulatory', output 'Legal'. Otherwise, default to 'Corporate'."
+            },
+            {
+              "name": "Deployment_Context_Key",
+              "description": "Generate a composite string structured exactly as: Incoming_Asset_ID - Incoming_NIST_Control (Business_Unit)."
+            },
+            {
+              "name": "Scan_Type",
+              "description": "Determine the type of assessment run (e.g., \"Automated Bias Scan\") or default to \"Unknown\"."
+            },
+            {
+              "name": "Scan_Status",
+              "description": "Extract the execution status or default to \"Ingested\"."
+            },
+            {
+              "name": "Raw_JSON_Payload",
+              "description": "Capture the entire original, untouched input JSON object exactly as it was received and format it as a single string block."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "b4c0781e-e8d0-47cb-b737-2c003d79f699",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        208
+      ],
+      "id": "f3645845-2894-4e90-a389-742d29f1996f",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "HHYxDzypiuByLIt1",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "b47563ae-8a89-4fdf-b90e-cc82021d4d69",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7a8710ba0aa825186aba26146936bfcde5f1786fb781ac7e2d6657c516758fd5"
+  },
+  "id": "mPfm4jEKFMISLq6Z",
+  "tags": []
+}
