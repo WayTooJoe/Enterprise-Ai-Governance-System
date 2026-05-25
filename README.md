@@ -22,13 +22,15 @@ This engine is a headless, event-driven pipeline designed for autonomous governa
 
 ## Showcase: System Engineering
 
-![System Blueprint](figure-13-0.png)
-*Figure 13.0: Pipeline Architecture. End-to-end orchestration from perimeter to immutable vault.*
+[System Blueprint]<img width="1856" height="926" alt="figure-13-0" src="https://github.com/user-attachments/assets/cd179966-b4e6-43fc-a589-2de612a6d8a5" />
 
-![Neural Serialization](figure-14-0.png)
+*Pipeline Architecture. End-to-end orchestration from perimeter to immutable vault.*
+
+[Neural Serialization]<img width="1847" height="946" alt="image" src="https://github.com/user-attachments/assets/3369b466-1538-47b8-b358-b24f49aa7f62" />
+
 *Figure 14.0: Neural Extraction. Deterministic serialization of unstructured telemetry.*
 
-![Evidence Vault](figure-15-0.png)
+[Evidence Vault]<img width="1851" height="1025" alt="Screenshot 2026-05-24 212312" src="https://github.com/user-attachments/assets/7b109b1b-8ace-4034-ac67-6bad0eb85b3d" />
 *Figure 15.0: Relational Handshake. Atomic commit of compliance verdicts to the Evidence Vault.*
 
 ---
